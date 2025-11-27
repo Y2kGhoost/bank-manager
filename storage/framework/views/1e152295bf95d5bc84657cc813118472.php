@@ -1,0 +1,1 @@
+<a href="<?php echo e(route('clients.create')); ?>" class="btn btn-primary mb-3">Ajouter un Client</a><?php /**PATH C:\Users\PC\Desktop\Programation\Laravel\bank-manager\resources\views/index.blade.php ENDPATH**/ ?>
