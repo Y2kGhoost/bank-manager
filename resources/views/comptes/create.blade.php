@@ -2,38 +2,59 @@
 
 @section('content')
 <div class="container">
-    <h1>Ajouter un Compte</h1>
-
-    <form action="{{ route('comptes.store') }}" method="POST">
-        @csrf
-
-        <div class="mb-3">
-            <label>RIB</label>
-            <input type="text" name="rib" class="form-control @error('rib') is-invalid @enderror" value="{{ old('rib') }}">
-            @error('rib') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    <div class="card" data-aos="fade-up">
+        <div class="card-header">
+            <h3 class="card-header-title">
+                <span class="header-icon">💳</span>
+                Créer un Nouveau Compte Bancaire
+            </h3>
         </div>
+        <div class="card-body">
+            <form action="{{ route('comptes.store') }}" method="POST">
+                @csrf
 
-        <div class="mb-3">
-            <label>Solde initial</label>
-            <input type="number" step="0.01" name="solde" class="form-control @error('solde') is-invalid @enderror" value="{{ old('solde', 0) }}">
-            @error('solde') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <div class="mb-4">
+                    <label for="rib" class="form-label">RIB (Relevé d'Identité Bancaire) *</label>
+                    <input type="text" name="rib" id="rib" class="form-control @error('rib') is-invalid @enderror" 
+                           value="{{ old('rib') }}" placeholder="Ex: MA123456789012345678901234" required>
+                    @error('rib') 
+                        <div class="invalid-feedback">{{ $message }}</div> 
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="solde" class="form-label">Solde Initial (DH) *</label>
+                    <input type="number" step="0.01" name="solde" id="solde" 
+                           class="form-control @error('solde') is-invalid @enderror" 
+                           value="{{ old('solde', 0) }}" placeholder="0.00" min="0" required>
+                    @error('solde') 
+                        <div class="invalid-feedback">{{ $message }}</div> 
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="client_id" class="form-label">Client Propriétaire *</label>
+                    <select name="client_id" id="client_id" class="form-control @error('client_id') is-invalid @enderror" required>
+                        <option value="">-- Sélectionnez un client --</option>
+                        @foreach($clients as $client)
+                            <option value="{{ $client->id }}" {{ old('client_id') == $client->id ? 'selected' : '' }}>
+                                {{ $client->nom }} {{ $client->prenom }} ({{ $client->email }})
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('client_id') 
+                        <div class="invalid-feedback">{{ $message }}</div> 
+                    @enderror
+                </div>
+
+                <div class="d-flex gap-3 mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <span>✓</span> Créer le Compte
+                    </button>
+                    <a href="{{ route('comptes.index') }}" class="btn btn-secondary">Annuler</a>
+                </div>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label>Client</label>
-            <select name="client_id" class="form-control @error('client_id') is-invalid @enderror">
-                <option value="">-- Choisir un client --</option>
-                @foreach($clients as $client)
-                    <option value="{{ $client->id }}" {{ old('client_id') == $client->id ? 'selected' : '' }}>
-                        {{ $client->nom }} {{ $client->prenom }}
-                    </option>
-                @endforeach
-            </select>
-            @error('client_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-
-        <button type="submit" class="btn btn-primary">Créer</button>
-        <a href="{{ route('comptes.index') }}" class="btn btn-secondary">Annuler</a>
-    </form>
+    </div>
 </div>
 @endsection

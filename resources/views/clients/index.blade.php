@@ -2,13 +2,19 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4">Gestion des Clients</h1>
-
-    <!-- Boutons d'action -->
-    <div class="mb-3">
-        <a href="{{ route('clients.create') }}" class="btn btn-primary">Ajouter un Client</a>
-        <a href="{{ route('comptes.index') }}" class="btn btn-secondary ms-2">Voir les Comptes</a>
-        <a href="{{ route('virement.create') }}" class="btn btn-success ms-2">Faire un Virement</a>
+    <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+        <h1 class="mb-0">👥 Gestion des Clients</h1>
+        <div class="d-flex gap-2">
+            <a href="{{ route('clients.create') }}" class="btn btn-primary">
+                <span>➕</span> Ajouter un Client
+            </a>
+            <a href="{{ route('comptes.index') }}" class="btn btn-secondary">
+                <span>💳</span> Voir les Comptes
+            </a>
+            <a href="{{ route('virement.create') }}" class="btn btn-success">
+                <span>💸</span> Faire un Virement
+            </a>
+        </div>
     </div>
 
     <!-- Message de succès -->

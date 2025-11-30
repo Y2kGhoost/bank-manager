@@ -1,6 +1,4 @@
-@extends('layout.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- HERO SECTION -->
 <section class="hero-section" data-aos="fade-up">
     <div class="hero-content">
@@ -21,7 +19,7 @@
         <!-- MENU PRINCIPAL -->
         <div class="hero-menu" data-aos="fade-up" data-aos-delay="500">
             <div class="menu-grid">
-                <a href="{{ route('clients.index') }}" class="menu-card menu-card-primary">
+                <a href="<?php echo e(route('clients.index')); ?>" class="menu-card menu-card-primary">
                     <div class="menu-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -32,7 +30,7 @@
                     <span class="menu-arrow">→</span>
                 </a>
 
-                <a href="{{ route('comptes.index') }}" class="menu-card menu-card-blue">
+                <a href="<?php echo e(route('comptes.index')); ?>" class="menu-card menu-card-blue">
                     <div class="menu-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
@@ -43,7 +41,7 @@
                     <span class="menu-arrow">→</span>
                 </a>
 
-                <a href="{{ route('virement.create') }}" class="menu-card menu-card-success">
+                <a href="<?php echo e(route('virement.create')); ?>" class="menu-card menu-card-success">
                     <div class="menu-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
@@ -57,4 +55,5 @@
         </div>
     </div>
 </section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\Users\Administrator\Desktop\Programming\Laravel\bank-manager\resources\views/home.blade.php ENDPATH**/ ?>
