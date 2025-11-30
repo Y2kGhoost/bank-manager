@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
-        <h1 class="mb-0">💳 Gestion des Comptes Bancaires</h1>
+        <h1 class="mb-0">Gestion des Comptes Bancaires</h1>
         <a href="{{ route('comptes.create') }}" class="btn btn-primary">
-            <span>➕</span> Ajouter un Compte
+            <span></span> Ajouter un Compte
         </a>
     </div>
 

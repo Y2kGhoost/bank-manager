@@ -5,7 +5,7 @@
 <section class="hero-section" data-aos="fade-up">
     <div class="hero-content">
         <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
-            <span class="badge-icon">🏦</span>
+            <span class="badge-icon"></span>
             <span>Application Bancaire Moderne</span>
         </div>
         <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">

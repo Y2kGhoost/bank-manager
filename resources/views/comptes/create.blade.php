@@ -5,7 +5,7 @@
     <div class="card" data-aos="fade-up">
         <div class="card-header">
             <h3 class="card-header-title">
-                <span class="header-icon">💳</span>
+                <span class="header-icon"></span>
                 Créer un Nouveau Compte Bancaire
             </h3>
         </div>

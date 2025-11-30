@@ -1,16 +1,16 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
-        <h1 class="mb-0">👥 Gestion des Clients</h1>
+        <h1 class="mb-0">Gestion des Clients</h1>
         <div class="d-flex gap-2">
             <a href="<?php echo e(route('clients.create')); ?>" class="btn btn-primary">
-                <span>➕</span> Ajouter un Client
+                <span></span> Ajouter un Client
             </a>
             <a href="<?php echo e(route('comptes.index')); ?>" class="btn btn-secondary">
-                <span>💳</span> Voir les Comptes
+                <span></span> Voir les Comptes
             </a>
             <a href="<?php echo e(route('virement.create')); ?>" class="btn btn-success">
-                <span>💸</span> Faire un Virement
+                <span></span> Faire un Virement
             </a>
         </div>
     </div>
